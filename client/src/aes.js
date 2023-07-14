@@ -1,4 +1,3 @@
-
 var aes256 = require("crypto-js/aes");
 var CryptoJS = require("crypto-js");
 
@@ -23,12 +22,9 @@ async function to_Decrypt(cipher, name, secret_key) {
     var decrypted = await aes256.decrypt(cipher, secret_key);
     return decrypted.toString(CryptoJS.enc.Utf8);
   } catch (error) {
-
     return error.msg;
   }
 }
 
-module.exports = {
-  to_Encrypt,
-  to_Decrypt,
-};
+module.exports.to_Encrypt = to_Encrypt;
+module.exports.to_Decrypt = to_Decrypt;
