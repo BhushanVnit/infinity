@@ -15,15 +15,15 @@ a seamless and responsive user experience.
 
 <img width="960" alt="image" src="https://github.com/BhushanVnit/infinity/assets/86290772/fe2ee12c-537c-434b-bfb2-a7062f5b9e00">
 
---- Details Filled by User ----
+# Details Filled by User :
 
 
 <img width="960" alt="image" src="https://github.com/BhushanVnit/infinity/assets/86290772/8a83a717-c2fe-4b21-9204-b49bb0acbe96">
 
---- First Look and Welcome Message ---
+# First Look and Welcome Message 
 
 
 <img width="960" alt="image" src="https://github.com/BhushanVnit/infinity/assets/86290772/b5ced6ff-8354-4d3d-9501-b89879569324">
 
---- List of active users in chatroom ---
+# List of active users in chatroom 
 <img width="960" alt="image" src="https://github.com/BhushanVnit/infinity/assets/86290772/9b6690e3-24c3-4fca-9ced-31eb542e381e">
