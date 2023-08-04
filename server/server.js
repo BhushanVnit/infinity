@@ -7,12 +7,29 @@ const app = express();
 const httpServer = require("http").createServer(app);
 const color = require("colors");
 const cors = require("cors");
-const { get_Current_User, user_Disconnect, join_User,get_Current_Users} = require("./dummyuser");
+const { get_Current_User, user_Disconnect, join_User, get_Current_Users } = require("./dummyuser");
 
 app.use(express());
+
 const BASE_URL = process.env.BASE_URL;
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", BASE_URL);
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE");
+  res.header("Access-Control-Allow-Credentials", true);
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
+  next();
+});
+
 app.use(cors({ origin: BASE_URL }));
+
 const port = process.env.PORT || 8000;
+
 const io = require("socket.io")(httpServer, {
   cors: {
     origin: BASE_URL,
@@ -64,7 +81,7 @@ io.on("connection", (socket) => {
     //gets the room user and the message sent
     const p_user = get_Current_User(socket.id);
 
-    if(p_user){
+    if (p_user) {
       io.to(p_user.room).emit("message", {
         userId: p_user.id,
         name: p_user.nameForm,
