@@ -6,8 +6,8 @@ import io from "socket.io-client";
 import Home from "./home/home";
 import ChatScreen from "./chat/ChatScreen";
 import Footer from "./Footer";
-
-const socket = io.connect("http://localhost:8000");
+const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const socket = io.connect(REACT_APP_BACKEND_URL);
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <div className="App bg-slate-800">
         <Routes>
           <Route path="/" element={<Home socket={socket} />} />
-          <Route path="/chat/:roomname/:username" element={<ChatScreen socket={socket}/>}/>
+          <Route path="/chat/:roomname/:username" element={<ChatScreen socket={socket} />} />
         </Routes>
         <Footer />
       </div>

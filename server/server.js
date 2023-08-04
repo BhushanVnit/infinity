@@ -1,5 +1,6 @@
 // for initializing backend connection
 // and ensures the communication between the users in the room.
+
 require('dotenv').config();
 const express = require("express");
 const app = express();
@@ -9,8 +10,7 @@ const cors = require("cors");
 const { get_Current_User, user_Disconnect, join_User,get_Current_Users} = require("./dummyuser");
 
 app.use(express());
-
-const BASE_URL = process.env.BASE_URL
+const BASE_URL = process.env.BASE_URL;
 app.use(cors({ origin: BASE_URL }));
 const port = process.env.PORT || 8000;
 const io = require("socket.io")(httpServer, {
@@ -24,7 +24,6 @@ httpServer.listen(
   port,
   console.log(`Server is running on the port no: ${port}`.green)
 );
-
 // https://socket.io/docs/v4/
 
 app.get("/users/:room", (req, res) => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRecoilValue } from "recoil";
 import { roomName } from "../recoil_state";
-
+const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 function Process() {
   const [users, setUsers] = useState([]);
   const room = useRecoilValue(roomName);
@@ -12,8 +12,7 @@ function Process() {
 
       try {
 
-        const response = await axios.get(`http://localhost:8000/users/${room}`);
-        console.log(response);
+        const response = await axios.get(`${REACT_APP_BACKEND_URL}/users/${room}`);
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching users:", error);
