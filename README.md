@@ -1,4 +1,5 @@
 # Infinity: End-to-End Encrypted, Real-Time Chat Application
+ 👉 Live at : https://infinity-secure.netlify.app/ 🎉
 • Designed and built a real-time chat application featuring unique chat room IDs, enabling users to communicate
 instantly using Socket.IO.
 
